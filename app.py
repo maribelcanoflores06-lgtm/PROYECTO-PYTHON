@@ -5,14 +5,14 @@ import pandas as pd
 st.set_page_config(
     page_title="Proyecto 1 – Python Fundamentals",
     page_icon="🧵",
-    layout="centered"
+ 
 )
  
 # ─────────────────────────────────────────────
 # MENÚ LATERAL
 # ─────────────────────────────────────────────
 seccion = st.sidebar.selectbox(
-    "Navegación",
+    "Secciones",
     ["Home", "Ejercicio 1", "Ejercicio 2", "Ejercicio 3", "Ejercicio 4"]
 )
  
