@@ -1,4 +1,6 @@
 import streamlit as st
+import numpy as np
+import pandas as pd
 
 st.set_page_config(
     page_title="Proyecto 1 – Python Fundamentals",
@@ -242,9 +244,9 @@ elif seccion == "Ejercicio 3":
                 st.metric("🎫 Ticket promedio por cliente", f"S/ {ticket:,.2f}")
  
                 st.session_state.historial_ticket.append({
-                    "Descripción":       descripcion.strip(),
+                    "Descripción":         descripcion.strip(),
                     "Ventas totales (S/)": float(ventas_totales),
-                    "N° clientes":        int(numero_clientes),
+                    "N° clientes":         int(numero_clientes),
                     "Ticket promedio (S/)": ticket
                 })
                 st.success("Resultado guardado en el historial.")
@@ -280,7 +282,7 @@ elif seccion == "Ejercicio 4":
  
     # Inicializar registros CRUD
     if "equipos" not in st.session_state:
-        st.session_state.equipos = {}   # {id: dict con parámetros + resumen}
+        st.session_state.equipos = {}
     if "eq_contador" not in st.session_state:
         st.session_state.eq_contador = 1
  
@@ -310,13 +312,13 @@ elif seccion == "Ejercicio 4":
                 resumen = equipo_obj.resumen()
                 eq_id = st.session_state.eq_contador
                 st.session_state.equipos[eq_id] = {
-                    "nombre":          eq_nombre.strip(),
-                    "horas_operacion": float(eq_horas_op),
-                    "numero_fallas":   int(eq_fallas),
-                    "horas_reparacion":float(eq_h_rep),
-                    "MTBF (h)":        resumen["mtbf_h"],
-                    "MTTR (h)":        resumen["mttr_h"],
-                    "Disponibilidad %":resumen["disponibilidad_pct"]
+                    "nombre":           eq_nombre.strip(),
+                    "horas_operacion":  float(eq_horas_op),
+                    "numero_fallas":    int(eq_fallas),
+                    "horas_reparacion": float(eq_h_rep),
+                    "MTBF (h)":         resumen["mtbf_h"],
+                    "MTTR (h)":         resumen["mttr_h"],
+                    "Disponibilidad %": resumen["disponibilidad_pct"]
                 }
                 st.session_state.eq_contador += 1
                 st.success(f"Equipo '{eq_nombre}' registrado con ID {eq_id}.")
@@ -359,11 +361,11 @@ elif seccion == "Ejercicio 4":
         datos_sel = st.session_state.equipos[id_actualizar]
         col1, col2 = st.columns(2)
         with col1:
-            nuevo_nombre   = st.text_input("Nuevo nombre", value=datos_sel["nombre"], key="upd_nombre")
-            nuevas_horas   = st.number_input("Horas de operación", value=datos_sel["horas_operacion"], min_value=1.0, step=1.0, key="upd_horas")
+            nuevo_nombre  = st.text_input("Nuevo nombre", value=datos_sel["nombre"], key="upd_nombre")
+            nuevas_horas  = st.number_input("Horas de operación", value=datos_sel["horas_operacion"], min_value=1.0, step=1.0, key="upd_horas")
         with col2:
-            nuevas_fallas  = st.number_input("Número de fallas", value=datos_sel["numero_fallas"], min_value=1, step=1, key="upd_fallas")
-            nuevas_h_rep   = st.number_input("Horas de reparación", value=datos_sel["horas_reparacion"], min_value=0.0, step=0.5, key="upd_hrep")
+            nuevas_fallas = st.number_input("Número de fallas", value=datos_sel["numero_fallas"], min_value=1, step=1, key="upd_fallas")
+            nuevas_h_rep  = st.number_input("Horas de reparación", value=datos_sel["horas_reparacion"], min_value=0.0, step=0.5, key="upd_hrep")
  
         if st.button("🔄 Guardar cambios"):
             if nuevo_nombre.strip() == "":
