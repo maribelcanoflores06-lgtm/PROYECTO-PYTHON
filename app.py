@@ -32,7 +32,7 @@ if seccion == "Home":
         "- **Streamlit"
         "- **NumPy** "
         "- **Pandas**"
-        "- **Librerías externas del curso** 
+        "- **Librerías externas del curso**" 
     )
  
 # ═══════════════════════════════════════════════════════════
