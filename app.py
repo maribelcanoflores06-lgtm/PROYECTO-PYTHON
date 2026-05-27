@@ -11,12 +11,13 @@ seccion = st.sidebar.selectbox(
 if seccion == "Home":
     st.title("🧵 Proyecto 1 – Python Fundamentals")
     
-    st.write("Maribel Cano Flores")
-    st.write("Módulo 1 – Python Fundamentals")
-    st.write("2025")
+    st.write("Nombres y apellis :Maribel Cano Flores")
+    st.write("Curso :Módulo 1 – Python Fundamentals")
+    st.write("Año :2025")
+    st.write("Analista de información")
  
  
-    st.markdown("---")
+ 
     st.markdown("### 📋 Descripción del proyecto")
     st.write(
         "Esta aplicación interactiva integra los conceptos fundamentales del Módulo 1: "
@@ -27,11 +28,11 @@ if seccion == "Home":
  
     st.markdown("### 🛠️ Tecnologías utilizadas")
     st.markdown(
-        "- **Python 3** – lenguaje principal  \n"
-        "- **Streamlit** – interfaz web interactiva  \n"
-        "- **NumPy** – arreglos numéricos  \n"
-        "- **Pandas** – DataFrames  \n"
-        "- **Librerías externas del curso** – funciones y clases proporcionadas por el docente"
+        "- **Python 3** "
+        "- **Streamlit"
+        "- **NumPy** "
+        "- **Pandas**
+        "- **Librerías externas del curso** 
     )
  
 # ═══════════════════════════════════════════════════════════
