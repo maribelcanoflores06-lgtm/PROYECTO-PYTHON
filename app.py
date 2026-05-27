@@ -2,9 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-
- 
-
 seccion = st.sidebar.selectbox(
     "Secciones",
     ["Home", "Ejercicio 1", "Ejercicio 2", "Ejercicio 3", "Ejercicio 4"]
@@ -13,24 +10,17 @@ seccion = st.sidebar.selectbox(
 
 if seccion == "Home":
     st.title("🧵 Proyecto 1 – Python Fundamentals")
-    st.subheader("Especialización en Python for Analytics")
+    
  
-    st.markdown("---")
- 
-    col1, col2 = st.columns(2)
+    col1 = st.columns(1)
     with col1:
-        st.markdown("**👤 Estudiante:**")
-        st.write("Maribel")
-        st.markdown("**📚 Módulo:**")
+    
+        st.write("Maribel Cano Flores")
+     
         st.write("Módulo 1 – Python Fundamentals")
-        st.markdown("**📅 Año:**")
+    
         st.write("2025")
  
-    with col2:
-        st.markdown("**🏫 Curso:**")
-        st.write("Especialización en Python for Analytics")
-        st.markdown("**👨‍🏫 Docente:**")
-        st.write("MSc. Carlos Carrillo Villavicencio")
  
     st.markdown("---")
     st.markdown("### 📋 Descripción del proyecto")
