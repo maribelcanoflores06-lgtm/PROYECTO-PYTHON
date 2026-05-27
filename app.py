@@ -2,23 +2,15 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-st.set_page_config(
-    page_title="Proyecto 1 – Python Fundamentals",
-    page_icon="🧵",
+
  
-)
- 
-# ─────────────────────────────────────────────
-# MENÚ LATERAL
-# ─────────────────────────────────────────────
+
 seccion = st.sidebar.selectbox(
     "Secciones",
     ["Home", "Ejercicio 1", "Ejercicio 2", "Ejercicio 3", "Ejercicio 4"]
 )
  
-# ═══════════════════════════════════════════════════════════
-# HOME
-# ═══════════════════════════════════════════════════════════
+
 if seccion == "Home":
     st.title("🧵 Proyecto 1 – Python Fundamentals")
     st.subheader("Especialización en Python for Analytics")
