@@ -11,8 +11,6 @@ seccion = st.sidebar.selectbox(
 if seccion == "Home":
     st.title("🧵 Proyecto 1 – Python Fundamentals")
     
- 
-  
         st.write("Maribel Cano Flores")
      
         st.write("Módulo 1 – Python Fundamentals")
