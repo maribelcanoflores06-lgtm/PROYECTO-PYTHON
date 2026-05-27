@@ -34,10 +34,7 @@ if seccion == "Home":
         "- **Pandas**"
         "- **Librerías externas del curso**" 
     )
- 
-# ═══════════════════════════════════════════════════════════
-# EJERCICIO 1 – Flujo de caja con listas
-# ═══════════════════════════════════════════════════════════
+
 elif seccion == "Ejercicio 1":
     st.title("📊 Ejercicio 1 – Flujo de caja con listas")
  
@@ -47,7 +44,7 @@ elif seccion == "Ejercicio 1":
     el registro se guarda y se actualiza el resumen del flujo de caja.
     """)
  
-    # Inicializar lista en session_state
+  
     if "movimientos" not in st.session_state:
         st.session_state.movimientos = []
  
@@ -109,9 +106,7 @@ elif seccion == "Ejercicio 1":
         st.session_state.movimientos = []
         st.info("Lista de movimientos reiniciada.")
  
-# ═══════════════════════════════════════════════════════════
-# EJERCICIO 2 – Registro con NumPy, arrays y DataFrame
-# ═══════════════════════════════════════════════════════════
+
 elif seccion == "Ejercicio 2":
     st.title("🏭 Ejercicio 2 – Registro de producción textil con NumPy")
  
@@ -120,7 +115,7 @@ elif seccion == "Ejercicio 2":
     Los datos se almacenan en **arrays de NumPy** y se convierten en un **DataFrame** actualizado.
     """)
  
-    # Inicializar arrays en session_state
+  
     if "arr_maquina" not in st.session_state:
         st.session_state.arr_maquina   = np.array([], dtype=str)
         st.session_state.arr_tipo_hilo = np.array([], dtype=str)
@@ -178,9 +173,7 @@ elif seccion == "Ejercicio 2":
         st.session_state.arr_kg        = np.array([], dtype=float)
         st.info("Registros limpiados.")
  
-# ═══════════════════════════════════════════════════════════
-# EJERCICIO 3 – Función externa: calcular_ticket_promedio
-# ═══════════════════════════════════════════════════════════
+
 elif seccion == "Ejercicio 3":
     from libreria_funciones_proyecto1 import calcular_ticket_promedio
     st.title("🛒 Ejercicio 3 – Ticket promedio (función externa)")
@@ -191,7 +184,7 @@ elif seccion == "Ejercicio 3":
     Cada resultado se guarda en un historial tipo DataFrame.
     """)
  
-    # Inicializar historial
+    
     if "historial_ticket" not in st.session_state:
         st.session_state.historial_ticket = []
  
@@ -243,10 +236,7 @@ elif seccion == "Ejercicio 3":
     if st.button("🗑️ Limpiar historial"):
         st.session_state.historial_ticket = []
         st.info("Historial limpiado.")
- 
-# ═══════════════════════════════════════════════════════════
-# EJERCICIO 4 – CRUD con clase EquipoMantenimiento
-# ═══════════════════════════════════════════════════════════
+
 elif seccion == "Ejercicio 4":
     from libreria_clases_proyecto1 import EquipoMantenimiento
     st.title("🔧 Ejercicio 4 – Gestión de equipos con CRUD")
@@ -257,13 +247,13 @@ elif seccion == "Ejercicio 4":
     y administra los registros con operaciones **Crear, Leer, Actualizar y Eliminar**.
     """)
  
-    # Inicializar registros CRUD
+ 
     if "equipos" not in st.session_state:
         st.session_state.equipos = {}
     if "eq_contador" not in st.session_state:
         st.session_state.eq_contador = 1
  
-    # ── CREAR ─────────────────────────────────────────────
+ 
     st.markdown("---")
     st.subheader("➕ Crear nuevo equipo")
  
@@ -302,7 +292,7 @@ elif seccion == "Ejercicio 4":
             except ValueError as e:
                 st.error(f"Error: {e}")
  
-    # ── LEER ──────────────────────────────────────────────
+
     st.markdown("---")
     st.subheader("📋 Equipos registrados")
  
@@ -324,7 +314,7 @@ elif seccion == "Ejercicio 4":
         df_equipos = pd.DataFrame(filas)
         st.dataframe(df_equipos, use_container_width=True)
  
-        # ── ACTUALIZAR ────────────────────────────────────
+    
         st.markdown("---")
         st.subheader("✏️ Actualizar equipo")
  
@@ -369,7 +359,7 @@ elif seccion == "Ejercicio 4":
                 except ValueError as e:
                     st.error(f"Error: {e}")
  
-        # ── ELIMINAR ──────────────────────────────────────
+       
         st.markdown("---")
         st.subheader("🗑️ Eliminar equipo")
  
