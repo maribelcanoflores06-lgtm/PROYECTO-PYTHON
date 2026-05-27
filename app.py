@@ -31,7 +31,7 @@ if seccion == "Home":
         "- **Python 3** "
         "- **Streamlit"
         "- **NumPy** "
-        "- **Pandas**
+        "- **Pandas**"
         "- **Librerías externas del curso** 
     )
  
