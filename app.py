@@ -12,9 +12,7 @@ if seccion == "Home":
     st.title("🧵 Proyecto 1 – Python Fundamentals")
     
  
-    col1 = st.columns(1)
-    with col1:
-    
+  
         st.write("Maribel Cano Flores")
      
         st.write("Módulo 1 – Python Fundamentals")
